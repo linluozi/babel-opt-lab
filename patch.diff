@@ -1,0 +1,37 @@
+diff --git a/.gitignore b/.gitignore
+index 31cf48e..85ff1d5 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -12,6 +12,8 @@
+ .coverage
+ .idea
+ .tox
++.venv
++.pytest_cache
+ /venv*
+ babel/global.dat
+ babel/global.dat.json
+diff --git a/babel/numbers.py b/babel/numbers.py
+index 83424ec..055ec7f 100644
+--- a/babel/numbers.py
++++ b/babel/numbers.py
+@@ -1561,9 +1561,16 @@ class NumberPattern:
+         )
+ 
+         if '¤' in retval and currency is not None:
+-            retval = retval.replace('¤¤¤', get_currency_name(currency, value, locale))
+-            retval = retval.replace('¤¤', currency.upper())
+-            retval = retval.replace('¤', get_currency_symbol(currency, locale))
++            # ``str.replace`` evaluates its arguments eagerly, so calling
++            # ``get_currency_name`` unconditionally pays for a plural-form
++            # global-data lookup even when the pattern has no ``¤¤¤`` token.
++            # Guard each replacement; the result is byte-identical.
++            if '¤¤¤' in retval:
++                retval = retval.replace('¤¤¤', get_currency_name(currency, value, locale))
++            if '¤¤' in retval:
++                retval = retval.replace('¤¤', currency.upper())
++            if '¤' in retval:
++                retval = retval.replace('¤', get_currency_symbol(currency, locale))
+ 
+         # remove single quotes around text, except for doubled single quotes
+         # which are replaced with a single quote

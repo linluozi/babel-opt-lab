@@ -1,0 +1,96 @@
+{
+  "impl": "optimized",
+  "env": {
+    "python": "3.12.3",
+    "implementation": "CPython",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "babel": "2.18.0",
+    "babel_file": "/home/ubuntu/GitHub/work/algo/babel/babel/__init__.py",
+    "seed": 20261121,
+    "warmup": 3,
+    "samples": 5,
+    "locale_mode": "object"
+  },
+  "scales": {
+    "small": {
+      "ops_per_sample": 2000,
+      "samples_seconds": [
+        0.01828106865286827,
+        0.017348114401102066,
+        0.02263893187046051,
+        0.019964064471423626,
+        0.028828677721321583
+      ],
+      "ns_per_op_median": 9982.032235711813,
+      "ns_per_op_p25": 9140.534326434135,
+      "ns_per_op_p75": 11319.465935230255,
+      "rel_stdev_pct": 20.64375188832371
+    },
+    "medium": {
+      "ops_per_sample": 20000,
+      "samples_seconds": [
+        0.18792661000043154,
+        0.19025094993412495,
+        0.17196502164006233,
+        0.17597538139671087,
+        0.18047245685011148
+      ],
+      "ns_per_op_median": 9023.622842505574,
+      "ns_per_op_p25": 8798.769069835544,
+      "ns_per_op_p75": 9396.330500021577,
+      "rel_stdev_pct": 3.840589041930837
+    },
+    "large": {
+      "ops_per_sample": 100000,
+      "samples_seconds": [
+        0.8747911462560296,
+        0.8635335601866245,
+        0.8740688795223832,
+        0.8758871853351593,
+        0.8653711955994368
+      ],
+      "ns_per_op_median": 8740.688795223832,
+      "ns_per_op_p25": 8653.711955994368,
+      "ns_per_op_p75": 8747.911462560296,
+      "rel_stdev_pct": 0.5939127282874718
+    },
+    "real": {
+      "ops_per_sample": 114700,
+      "samples_seconds": [
+        1.2040393371134996,
+        1.204282594844699,
+        1.204674270004034,
+        1.1567664612084627,
+        1.0902568809688091
+      ],
+      "ns_per_op_median": 10497.291517990407,
+      "ns_per_op_p25": 10085.147874528882,
+      "ns_per_op_p75": 10499.4123351761,
+      "rel_stdev_pct": 3.7236053238218854
+    }
+  },
+  "upstream_tests": {
+    "command": "python -m pytest tests -q -p no:cacheprovider",
+    "summary": "8054 passed, 2 skipped, 2 xfailed in 13.44s",
+    "failed": 0
+  },
+  "g5_peak_rss_kb": [
+    18312,
+    18312,
+    18312
+  ],
+  "speedup_vs_baseline_object_locale": {
+    "small": 1.84,
+    "medium": 2.038,
+    "large": 2.078,
+    "real": 2.031
+  },
+  "g3_median_speedup_object_locale": 2.038,
+  "g3b_real_corpus_speedup": 2.031,
+  "string_locale_medium": {
+    "baseline_ns": 25003.803428262472,
+    "optimized_ns": 14123.83676506579,
+    "speedup": 1.77
+  }
+}

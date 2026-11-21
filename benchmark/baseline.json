@@ -1,0 +1,83 @@
+{
+  "impl": "baseline",
+  "env": {
+    "python": "3.12.3",
+    "implementation": "CPython",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "babel": "2.18.0",
+    "babel_file": "/home/ubuntu/GitHub/work/algo/babel/babel/__init__.py",
+    "seed": 20261121,
+    "warmup": 3,
+    "samples": 5,
+    "locale_mode": "object"
+  },
+  "scales": {
+    "small": {
+      "ops_per_sample": 2000,
+      "samples_seconds": [
+        0.03668860625475645,
+        0.03670551814138889,
+        0.036738259717822075,
+        0.0368138812482357,
+        0.037911634892225266
+      ],
+      "ns_per_op_median": 18369.129858911037,
+      "ns_per_op_p25": 18352.759070694447,
+      "ns_per_op_p75": 18406.94062411785,
+      "rel_stdev_pct": 1.2847373627673868
+    },
+    "medium": {
+      "ops_per_sample": 20000,
+      "samples_seconds": [
+        0.36784704867750406,
+        0.367716402746737,
+        0.3668739376589656,
+        0.37274728063493967,
+        0.3670677440240979
+      ],
+      "ns_per_op_median": 18385.82013733685,
+      "ns_per_op_p25": 18353.387201204896,
+      "ns_per_op_p75": 18392.352433875203,
+      "rel_stdev_pct": 0.5928598933398381
+    },
+    "large": {
+      "ops_per_sample": 100000,
+      "samples_seconds": [
+        1.832895834930241,
+        1.8148541562259197,
+        1.816395042464137,
+        1.813313890248537,
+        1.8294153921306133
+      ],
+      "ns_per_op_median": 18163.95042464137,
+      "ns_per_op_p25": 18148.541562259197,
+      "ns_per_op_p75": 18294.153921306133,
+      "rel_stdev_pct": 0.4470450221700709
+    },
+    "real": {
+      "ops_per_sample": 114700,
+      "samples_seconds": [
+        2.4259681906551123,
+        2.4575513107702136,
+        2.4455130510032177,
+        2.4573808200657368,
+        2.409626791253686
+      ],
+      "ns_per_op_median": 21320.950749810094,
+      "ns_per_op_p25": 21150.55092114309,
+      "ns_per_op_p75": 21424.418657940165,
+      "rel_stdev_pct": 0.7664943607816808
+    }
+  },
+  "upstream_tests": {
+    "command": "python -m pytest tests -q -p no:cacheprovider",
+    "summary": "8054 passed, 2 skipped, 2 xfailed in 13.44s",
+    "failed": 0
+  },
+  "g5_peak_rss_kb": [
+    19568,
+    18432,
+    18436
+  ]
+}

@@ -1,0 +1,1 @@
+{"impl": "baseline", "scale": "large", "sample_index": 4, "ops": 100000, "seconds": 1.8294153921306133, "ns_per_op": 18294.153921306133, "timestamp": "2026-11-21T04:09:47.797508+00:00", "python": "3.12.3", "seed": 20261121}
